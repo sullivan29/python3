@@ -1,3 +1,6 @@
+# To add a new cell, type '# %%'
+# To add a new markdown cell, type '# %% [markdown]'
+# %%
 # #! /usr/bin/env python3
 14 % 3
 14 // 3
@@ -30,6 +33,10 @@
 '''类型转换'''
 # float(string); int(string); str(float/integer)
 
+
+
+
+# %%
 '''program example'''
 '''sum of 1/x'''
 # sum = 0
@@ -51,7 +58,13 @@
 #     print('root 1 = ', root1)
 #     print('root 2 = ', root2)
 
-'''format函数'''
+
+# %%
+'''格式化输出 format函数
+b.farmat(a)
+format(a,b)
+'''
+
 # test = 266438.3519
 # print('tt   = {:,%}'.format(test))
 print('Hello, {0}, I\'m {1}. My name is {0}'.format('Andrew', 'Berry'))  # 位置填充
@@ -71,7 +84,29 @@ print('Hello, {name1}, I\'m {name2}. My name is {name1}'.format(name1 = 'Andrew'
 # # print('Gross salary = {:6.2f}'.format(salary))
 # print('Bonus = {:6.2f} | Commission = {:6.2f} | Gross salary = {:6.2f}'.format(bonus, commission, salary))
 
+
+# %%
+'''
+< 默认(字符串)对齐
+> R对齐
+^ 中间 
+位数：{:.4f}|{:20s}
+'''
 '''Area of circle'''
 import math
 area = math.pi * (2 ** 2)
-print('The area of circle is {:.10f}'.format(area))
+ss = 'Hello,World！'
+
+print('The area of circle is {:f}'.format(area)) # 默认6位
+print('The area of circle is {:.3f}'.format(area))
+print('The area of circle is {:9.3f}'.format(area)) # 数字默认R对齐, 3位小数，
+
+print('This is 23{:6=5}'.format(11)) # 占位5
+print('This is {:.2%}'.format(3/5)) # percentage
+print('This is {:,}'.format(2458239.6))
+
+print('this is {:.5s}'.format(ss)) # get 5 cha
+print('this is {:>20s}'.format(ss)) # R对齐20位
+print('this is {:*^21}'.format(ss)) # 中间对齐 
+
+
